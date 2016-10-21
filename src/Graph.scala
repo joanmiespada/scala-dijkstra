@@ -32,7 +32,8 @@ abstract class UndirectedGraph extends Graph {
       edge
     }
     override def toString:String =
-      (nodes.length - nodes.findIndexOf(this == _)).toString()
+    //  (nodes.length - nodes.findIndexOf(this == _)).toString()
+        (nodes.length - nodes.indexWhere(this == _)).toString()
   }
 
   protected def newNode: Node

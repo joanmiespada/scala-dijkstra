@@ -40,7 +40,7 @@ class Dijkstra[G <: WeightedGraph](graph: G) {
    * from Q and returns it.
    */
   protected def extractMinimum[T](Q: Set[T], D: Map[T, Int]): T = {
-    var u = Q.first
+    var u = Q.head //Q.first
     Q.foreach((node) =>  if(D(u) > D(node)) u = node)
     Q -= u
     return u;
